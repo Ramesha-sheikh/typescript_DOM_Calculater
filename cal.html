@@ -1,0 +1,160 @@
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <style>
+        .container{
+            width: 50%;
+            height: 500px;
+            margin: 0 auto;
+            margin-top: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        
+        }
+        .inp{
+            width: 100%;
+            display: flex;
+        }
+        
+        .inp input{
+            width: 100%;
+            height: 60px;
+            margin: 30px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3); 
+            color:rgb(230, 21, 177);
+            font-size: 30px;
+        }
+        .main{
+            width: 60%;
+           border-radius: 20px 20px 0px 0px ;
+            height: 500px;
+           background-color: rgb(250, 241, 241);
+            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3); 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            
+        }
+        .tab{
+            width: 80%;
+            display: flex;
+            justify-content: center;
+        }
+        table{
+            width: 100%;
+            height: 300px;
+            margin: 20px auto;
+          
+            
+           
+        }
+        table tr{
+            margin: 50px;
+           
+        }
+       
+      table td {
+        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3); 
+        width: 15%;
+        height: 40px;
+        border-radius: 20px;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        
+    }
+    table td:hover{
+        background-color: rgb(230, 21, 177);
+        transition: transform 0.20s ease;
+
+    }
+      .btn1{
+        background-color: black;
+        color: white;
+      }
+      .btn1:hover{
+        background-color: orange;
+        transition: transform 0.5s ease;
+      }
+      @media (min-width: 320px) and (max-width: 480px) {
+        .container{
+            width: 100%;
+           
+          
+        }
+        .inp{
+            width: 100%;
+        }
+        .main{
+            width:100%;
+        }
+        .inp input{
+            width: 100%;
+        }
+        table{
+            width: 100%;
+        }
+    
+      }
+     
+  
+      
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="main">
+    <div class="inp">
+        <input type="text" id="display" readonly>
+    </div>
+
+    <div class="tab">
+    <table >
+       
+        <tr>
+            
+            <td class="btn1" onclick="clearDisplay()">AC</td>
+            <td class="btn1"onClick="clearEntry()" >CE</td>
+            <td onclick="setOperation('/')">/</td>
+            <td onclick="setOperation('*')">*</td>
+        </tr>
+        <tr>
+            <td onclick="appendNumber('7')">7</td>
+            <td onclick="appendNumber('8')">8</td>
+            <td onclick="appendNumber('9')">9</td>
+            <td onclick="setOperation('-')">-</td>
+        </tr>
+        <tr>
+            <td onclick="appendNumber('4')">4</td>
+            <td onclick="appendNumber('5')">5</td>
+            <td onclick="appendNumber('6')">6</td>
+            <td onclick="setOperation('+')">+</td>
+        </tr>
+        <tr>
+            <td onclick="appendNumber('1')">1</td>
+            <td onclick="appendNumber('2')">2</td>
+            <td onclick="appendNumber('3')">3</td>
+            <td rowspan="3"onClick="calculate()">=</td>
+        </tr>
+        <tr>
+            <td colspan="2" onclick="appendNumber('0')">0</td>
+            <td onclick="appendNumber('.')">.</td>
+            
+            
+        </tr>
+    </table>
+</div>
+<script src="cal.js"></script>
+</body>
+   
+</html> 
